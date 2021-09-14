@@ -1,4 +1,4 @@
-function sortUniqueSets(arr) {
+function uniqueIdSorter(arr) {
   const result = [];
 
   // This Function Returns Only the First Unique ID Objects in an Array
@@ -8,11 +8,10 @@ function sortUniqueSets(arr) {
 
   // This Function Finds a New Set Given an Old Set and a New Object
   function nextSet(currentSet, newObject) {
-  const id = newObject.id
-  const index = currentSet.findIndex(object => object.id === id);
-  let set2 = currentSet.slice(0);
-  set2.splice(index, 1, newObject);
-  return set2;
+  const index = currentSet.findIndex(object => object.id === newObject.id);
+  let newSet = currentSet.slice(0);
+  newSet.splice(index, 1, newObject);
+  return newSet;
   }
 
   // Find the First Set

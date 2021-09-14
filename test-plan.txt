@@ -1,0 +1,52 @@
+TEST PLAN
+
+
+TEST CASE 1   (Check Max Length/No Repeats)
+Input: [{ id: 1 }, { id: 1 }]
+
+Expected Output: [[{ id: 1 }], [{ id: 1 }]]
+
+
+TEST CASE 2   (Check Only Objects From Input)
+Input: [{ id: 1 }, { id: 3 }, { id: 3 }]
+
+Expected Output: [[{ id: 1 }, { id: 3}], [{ id: 1 }, { id: 3 }]];
+
+
+TEST CASE 3   (Check Works With Non-Ascending Numerical ID order)
+Input: [{ id: 3}, { id: 2 }, { id: 2 }, { id: 1 }, { id: 1 }];
+
+Expected Output: [
+                  [{ id: 3 }, { id: 2}, { id: 1}],
+                  [{ id: 3 }, { id: 2}, { id: 1}],
+                  [{ id: 3 }, { id: 2}, { id: 1}],
+                  [{ id: 3 }, { id: 2}, { id: 1}]
+                  ]
+
+
+TEST CASE 4   (Check Works on Larger Input Array)
+Input: [{ id: 1 }, { id: 1 }, { id: 2 }, { id: 2 }, { id: 3 }, { id: 3 }, { id: 4 }]
+
+Expected Output: [
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+                  [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
+                  ]
+
+
+TEST CASE 5    (Check New Sets Are Combinations of Objects From Array, Check Works for More Complex Input Objects)
+Input: [{ id: 1, color: "green"}, { id: 1, color: "yellow"},
+        { id: 2, color: "green"}, { id: 2, color: "yellow"},
+        { id: 3, color: "green"}]
+
+Expected Output: [
+                  [{ id: 1, color: "green"}, { id: 2, color: "green"}, { id: 3, color: "green"}],
+                  [{ id: 1, color: "yellow"}, { id: 2, color: "green"}, { id: 3, color: "green"}],
+                  [{ id: 1, color: "green"}, { id: 2, color: "yellow"}, { id: 3, color: "green"}],
+                  [{ id: 1, color: "yellow"}, { id: 2, color: "yellow"}, { id: 3, color: "green"}]
+                  ]
